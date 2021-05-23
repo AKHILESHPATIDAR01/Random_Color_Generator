@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+
+        .box{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+
+<script>
+    var newElement = document.createElement("div");
+    newElement.classList.add("box");
+    document.body.appendChild(newElement);
+    let a = 0;
+    let b = 250;
+
+    let red;
+    let green;
+    let blue;
+
+
+    newElement.addEventListener('click',randomColour);
+
+    function randomColour(){
+        red = Math.ceil(a + (b - a)*Math.random());
+        green = Math.ceil(a + (b - a)*Math.random());
+        blue = Math.ceil(a + (b - a)*Math.random());
+
+        newElement.style.background = `rgb(${red},${green},${blue})`;
+        newElement.innerHTML = `${red} , ${green} , ${blue}`;
+
+    }
+
+
+</script>
+
+</body>
+</html>
